@@ -21,6 +21,40 @@ from sklearn.tree import plot_tree
 
 ## Plots
 
+### Util
+
+#### Change the plot size
+```python
+plt.figure(
+    figsize=(13, 5) # Sets figure size to 13 by 5 inches (!)
+)
+plt.plot(ks, inertias, 'bx-') # Can be any plot
+plt.show()
+```
+#### Change plot labels
+```python
+plt.plot(ks, inertias) # Can be any plot
+plt.xlabel('x axis label (below plot)')
+plt.ylabel('y axis label (left of plot)')
+plt.title('plot title (top of plot)')
+plt.show()
+```
+
+#### Add grid to plot
+```python
+plt.plot(ks, inertias) # Can be any plot
+plt.grid()
+plt.show()
+```
+
+#### Change amount of data labels ('ticks')
+```python
+plt.plot(ks, inertias) # Can be any plot
+plt.xticks(range(1, 12)) # 11 ticks will be shown: 1 through 11
+plt.yticks(range(1, 4), labels=["One", "Two", "Three"]) # 3 ticks will be shown: One, Two and Three
+plt.show()
+```
+
 ### Lineplot
 Used in time series analysis, for example.
 
