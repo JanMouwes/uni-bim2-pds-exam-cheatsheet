@@ -139,7 +139,63 @@ def print_df_metadata(df):
 
 ## DataFrame access
 
-TODO
+### Accessing a specific column
+
+```python
+# df: pandas.DataFrame 
+# column_name: name of the column you want to access
+def get_df_column(df, column_name):
+    return df[column_name]  # returns a pandas.Series
+```
+
+### Accessing multiple columns
+
+```python
+# df: pandas.DataFrame 
+# column_name: list names of the column you want to access
+def get_df_column(df, column_names):
+    return df[column_names]  # returns a pandas.DataFrame
+```
+
+### Filtering using [DataFrame.loc[]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html)
+
+```python
+# df: pandas.DataFrame 
+def get_greater_than_5(df):
+    return df.loc[
+        df['some_column'] > 5]  # returns a pandas.DataFrame with only the records with 'some_column' greater than 5
+```
+
+#### Broken down
+
+```python
+def get_greater_than_5(df):
+    bool_array = df['some_column'] > 5
+    # bool_array contains an array of the boolean result of the predicate '> 5'. 
+    return df.loc[bool_array]  # df.loc returns only those results for which the corresponding boolean value is True
+```
+
+### Access using [DataFrame.iloc[]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html)
+
+```python
+# df: pandas.DataFrame 
+def get_first_row(df):
+    return df.iloc[0]  # returns a pandas.DataFrame
+```
+
+```python
+# df: pandas.DataFrame 
+def get_first_five_rows(df):
+    return df.iloc[0:5]  # returns a pandas.DataFrame
+```
+
+### [DataFrame.loc[]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html) vs [DataFrame.iloc[]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html)
+
+The properties `DataFrame.loc` and `DataFrame.iloc` can be used to access either specific elements of a DataFrame or a
+subset of the records of the DataFrame.
+
+The difference between the two is that `DataFrame.loc` can take in a label, list of labels, boolean array or slice
+object to determine its output, whereas `DataFrame.iloc` requires an integer, list of integers or integer slice object.
 
 ## DataFrame manipulation
 
