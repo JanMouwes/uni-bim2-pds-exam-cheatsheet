@@ -20,17 +20,6 @@ def fit(k, data):
     return model
 ```
 
-### Getting the [sklearn.cluster.KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) and [KMeans.fit()](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans.fit)
-
-```python
-# k: the amount of clusters
-# data: pandas.DataFrame containing your data
-def fit(k, data):
-    model = KMeans(n_clusters=k)
-    model.fit(data)
-    return model
-```
-
 ### Calculating a model's inertia 
 
 Docs: [sklearn.cluster.KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
