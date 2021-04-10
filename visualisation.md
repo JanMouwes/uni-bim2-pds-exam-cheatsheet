@@ -102,7 +102,7 @@ def render_heatmap(df):
 # Docs: https://seaborn.pydata.org/generated/seaborn.pairplot.html
 
 # df: pandas.DataFrame containing data you want to show
-def render_heatmap(df):
+def render_pairplot(df):
     return sns.pairplot(
         data=df,
         hue=None,       # optional. If set to a column name, it colours the data points according to this variable's value
