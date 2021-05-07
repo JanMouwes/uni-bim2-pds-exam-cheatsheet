@@ -97,7 +97,7 @@ WHERE type = 'table'
 ```python
 # con: connection to the database
 # table_name: string with table name
-def get_column_names(con, table_name)
+def get_column_names(con, table_name):
     result = con.execute("SELECT * FROM " + table_name)
     return result
 ```
